@@ -8,7 +8,6 @@ public class Lab01 {
     private static final String YOU_HAVE_GOT_IT = "You've got it!!!";
 
     public static void main(String[] args) {
-
         int target = (int) (Math.random() * 100);
         System.out.println("Welcome to the Guessing Game. Enter a number between 1 and 100");
         play(target);
