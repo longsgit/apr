@@ -14,3 +14,9 @@
 > javac Hello.java
 > java Hello
 ```
+
+* .class files contain bytecodes. JVM executes the .class files
+
+* **.NET languages**: C#, VB.NET, F#
+* **JVM languages**: Java, Groovy, Scala, Kotlin
+* **IDE**: Eclipse, Intelli J, NetBeans, Visual Studio Code
