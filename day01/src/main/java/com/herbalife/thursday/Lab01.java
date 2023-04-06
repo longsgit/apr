@@ -23,13 +23,11 @@ public class Lab01 {
         while (!gameOver) {
             attempts++;
             guess = scanner.nextInt();
-            if (guess > target) {
-                message = AIM_LOWER;
-            } else if (guess < target) {
-                message = AIM_HIGHER;
-            } else {
+            if (guess == target) {
                 message = YOU_HAVE_GOT_IT;
                 gameOver = true;
+            } else {
+                message = guess > target ? AIM_LOWER : AIM_HIGHER;
             }
             System.out.println(message);
         }
