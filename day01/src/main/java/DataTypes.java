@@ -11,6 +11,7 @@ public class DataTypes {
         char ch = 'A';
         boolean bo = true;
 
+        //Wrapper classes
         Integer iObj = 10;
         Double d = 10.34;
         Long l = 2134123L;
