@@ -1,6 +1,6 @@
-package com.herbalife.labs.lab04;
+package com.herbalife.labs.lab03;
 
-public class Lab04 {
+public class Lab03 {
     public static void main(String[] args) {
         Person sam = new Person("Sam");
 

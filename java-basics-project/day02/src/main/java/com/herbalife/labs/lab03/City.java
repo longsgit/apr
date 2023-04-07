@@ -1,4 +1,4 @@
-package com.herbalife.labs.lab04;
+package com.herbalife.labs.lab03;
 
 public class City {
     private String name;
