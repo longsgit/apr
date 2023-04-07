@@ -1,4 +1,4 @@
-package examples;
+package com.herbalife.examples;
 
 public class BookUser {
     public static void main(String[] args) {

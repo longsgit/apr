@@ -1,4 +1,4 @@
-package examples;
+package com.herbalife.examples;
 
 public class Publisher {
     private String name;
