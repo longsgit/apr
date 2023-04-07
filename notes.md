@@ -1,3 +1,23 @@
+### Topics
+
+* Core Java
+* Spring framework basics
+* Spring boot basics
+* Spring boot with database
+* JDBC, ORM
+* REST API
+* Inter service Communication
+* MongoDB
+* Kafka
+* Docker (images, volumes, env variables)
+* Kubernetes (cluster, pods, services, deployments,)
+* Unit testing; Mock objects
+* Spring security
+* API Gateways
+* Basics of microservices architecture; patterns and challenges
+* Introduction to Quarkus
+
+
 ## Basics
 
 * All you need is JDK to get started working with Java applications
@@ -21,30 +41,14 @@
 * **JVM languages**: Java, Groovy, Scala, Kotlin
 * **IDE**: Eclipse, Intelli J, NetBeans, Visual Studio Code
 
-### Topics
 
-* Core Java
-* Spring framework basics
-* Spring boot basics
-* Spring boot with database
-* JDBC, ORM
-* REST API
-* Inter service Communication
-* MongoDB
-* Kafka
-* Docker (images, volumes, env variables)
-* Kubernetes (cluster, pods, services, deployments,)
-* Unit testing; Mock objects
-* Spring security
-* API Gateways
-* Basics of microservices architecture; patterns and challenges
-* Introduction to Quarkus
+### Day 01 recap
 
-
-
-
-
-
+* Maven or Gradle
+* Data types; Primitive and Reference types
+* String -> Immutable
+* For string manipulation use StringBuilder instead
+* Arrays; syntax is a bit flexible; you can write your square brackets in a number of places
 
 
 
