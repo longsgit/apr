@@ -10,10 +10,6 @@ public class AccountUser {
         //playWithNormalAccount();
         //playWithCurrentAccount();
         //playWithPremiumCurrentAccount();
-        List<TransactionTypeRecord> lst = new ArrayList<>();
-        lst.add(new TransactionTypeRecord(UUID.randomUUID(), 200, TransactionType.CREDIT, LocalDateTime.now()));
-        lst.forEach(System.out::println);
-
     }
 
     private static void playWithPremiumCurrentAccount() {
