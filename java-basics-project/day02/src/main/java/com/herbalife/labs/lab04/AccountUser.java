@@ -1,10 +1,18 @@
 package com.herbalife.labs.lab04;
 
+import java.time.LocalDateTime;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.UUID;
+
 public class AccountUser {
     public static void main(String[] args) {
         //playWithNormalAccount();
         //playWithCurrentAccount();
-        playWithPremiumCurrentAccount();
+        //playWithPremiumCurrentAccount();
+        List<TransactionTypeRecord> lst = new ArrayList<>();
+        lst.add(new TransactionTypeRecord(UUID.randomUUID(), 200, TransactionType.CREDIT, LocalDateTime.now()));
+        lst.forEach(System.out::println);
 
     }
 

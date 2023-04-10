@@ -51,7 +51,17 @@
 * Arrays; syntax is a bit flexible; you can write your square brackets in a number of places
 
 
+### OO concepts
 
+* Java beans (or POJO); private variables; public getter/setter methods; public methods
+* constructor, method overloading
+* static or shared members; static members can be accessed using class name or object reference also(not possible in C#)
+* default is package-friendly; private, protected, public
+* Every .java file can contain any number of classes (not recommended)
+* Every .java file can contain only one public class. or each public class should match the name of the .java file
+* extends keyword used for inheritance; overriding is straightforward; no keywords required; redefine the method in the super class without changing the signature
+* final keyword on methods, prevent overriding; on classes prevent inheritance
+* abstract keyword to define abstract classes;
 
 
 
