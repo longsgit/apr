@@ -21,6 +21,15 @@ public class Lab05 {
     }
 
     private static void printPopulationOf(String country) {
+        long total = countryCitiesMap
+                .get(country)
+                .stream()
+                .mapToLong(e -> e.getPopulation())
+                .sum();
+        System.out.println(String.format("Population of %s is %s", country, total));
+    }
+
+    private static void printPopulationOfOldStyle(String country) {
         List<City> cities = countryCitiesMap.get(country);
         long total = 0l;
         for (City city : cities) {
