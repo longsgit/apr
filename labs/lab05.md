@@ -1,4 +1,4 @@
-* Create __Lab05.java__ file in **com.herbalife.labs.lab06** package
+* Create __Lab05.java__ file in **com.herbalife.labs.lab05** package
 * In this exercise you'll use __cities.csv__ file to perform some operations
 * Study the __cities.csv__ file in the labs folder of the repository
 * Define Country or City classes if required
