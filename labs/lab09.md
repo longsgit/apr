@@ -30,5 +30,5 @@ public class Item {
 
 * Create Lab09.java
 * Print the name and price in **Name:Price** format
-* Print the names of all the items
+* Print the names of all the items that cost more than $20
 * Generate a new list containing the names of all the items (use **collect**)
