@@ -77,6 +77,10 @@ public class Lab05 {
     }
 
     private static void printAllTheCitiesGroupedByCountries() {
-        System.out.println(countryCitiesMap);
+        countryCitiesMap.forEach((country, cities) -> {
+            System.out.println(country);
+            cities.forEach(city -> System.out.println(city));
+        });
+        //System.out.println(countryCitiesMap);
     }
 }

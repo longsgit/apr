@@ -54,8 +54,10 @@ public class Account {
     }
 
     public void printStatement() {
-        for (Transaction txn : this.transactions) {
-            System.out.println(txn);
-        }
+        transactions.forEach(txn -> System.out.println(txn));
+
+//        for (Transaction txn : this.transactions) {
+//            System.out.println(txn);
+//        }
     }
 }
