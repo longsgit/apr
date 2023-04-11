@@ -63,7 +63,15 @@
 * final keyword on methods, prevent overriding; on classes prevent inheritance
 * abstract keyword to define abstract classes;
 
+### Day 03
 
+* Generics; Generic Types
+* Generics in Java is a compile time technique (or gimmick)
+* java.util package contains collection classes; List, Set, Map
+* Enums; enum keyword; you can have constructors, methods, variables in an enum
+* Lambdas are expressions representing an anonymous inner class
+* It is a shortcut implementation of functional interfaces ie., interface with just ONE abstract method
+* @FunctionalInterface can be used to mark an interface as a functional interface
 
 
 
