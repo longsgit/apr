@@ -24,3 +24,15 @@ public class FunctionalInterfacesFunction {
         System.out.println(concatFunction.apply("Sam", "Thomas"));
     }
 }
+//class MyFunction implements Function<T, R> {
+//    @Override
+//    public R apply(T t) {
+//        return null;
+//    }
+//
+//    @Override
+//    public <V> Function<T, V> andThen(Function<? super R, ? extends V> after) {
+//        return Function.super.andThen(after);
+//    }
+//}
+
