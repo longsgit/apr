@@ -5,6 +5,16 @@ import java.util.function.Consumer;
 
 public class ForEachOnCollections {
     public static void main(String[] args) {
+        int[] numbersArr = {1, 2, 3, 4, 5};
+        for (int i = 0; i < numbersArr.length; i += 2) {
+            System.out.println(numbersArr[i]);
+        }
+        Arrays
+                .asList(numbersArr)
+                .stream()
+                .forEach(num -> System.out.println(num));
+
+
         List<Integer> numbers = new ArrayList<>();
         numbers.add(100);
         numbers.add(200);
