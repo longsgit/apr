@@ -2,6 +2,8 @@ package com.herbalife.examples;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.Map;
+import java.util.stream.Collectors;
 
 public class MoreMethodsOnStreams {
     public static void main(String[] args) {
@@ -33,5 +35,11 @@ public class MoreMethodsOnStreams {
                 .map(it -> it * it)
                 .reduce(0, (total, current) -> total + current);
         System.out.println(sumOfSquaresOfNumbersDivBy3);
+
+        List<String> lst = Arrays.asList("a", "a", "b", "b", "c", "c", "c");
+        Map<String, Long> countMap = lst
+                .stream()
+                .collect(Collectors.groupingBy(e -> e, Collectors.counting()));
+        System.out.println(countMap); //{a=2, b=2, c=3}
     }
 }
