@@ -73,6 +73,16 @@
 * It is a shortcut implementation of functional interfaces ie., interface with just ONE abstract method
 * @FunctionalInterface can be used to mark an interface as a functional interface
 
+### Built-in Functional interfaces 
+
+* Predicate, Function, Supplier, Consumer
+* **java.util.function** package
+* Stream API
+* Create a stream on a collection and process the items sequentially
+* .stream() is used
+* Streams cannot be reused; filter, map, forEach(you don't need a stream)
+
+
 
 
 
