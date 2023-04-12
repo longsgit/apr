@@ -1,5 +1,8 @@
 package com.herbalife.labs.lab11;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
+
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
@@ -15,12 +18,26 @@ public class Lab11 {
 
     public static void main(String[] args) throws Exception {
         linesInCitiesCsvFile = Files.readAllLines(Paths.get("./cities.csv"));
-        store(line -> csvProcessFunction.apply(0, line), "./cities.txt");
-        store(line -> csvProcessFunction.apply(1, line), "./countries.txt");
+//        store(line -> csvProcessFunction.apply(0, line), "./cities.txt");
+//        store(line -> csvProcessFunction.apply(1, line), "./countries.txt");
         printCountOfCitiesGroupedByCountry();
-        printNamesOfAllCities();
-        generatePlacesJson();
+//        printNamesOfAllCities();
+//        generatePlacesJson();
+        generatePlacesJsonUsingJackson();
     }
+
+    private static void generatePlacesJsonUsingJackson() throws JsonProcessingException {
+        Set<City> cities = countryCitiesMap
+                .values() //List<List<City>>
+                .stream()
+                .flatMap(Collection::stream)//List<City>
+                .collect(Collectors.toSet());
+        ObjectMapper objectMapper = new ObjectMapper();
+        String json = objectMapper.writeValueAsString(cities);
+        System.out.println();
+        System.out.println(json);
+    }
+
 
     private static String getCityInJsonFormat(String lineInCsv) {
         StringBuilder jsonBuilder = new StringBuilder("");
