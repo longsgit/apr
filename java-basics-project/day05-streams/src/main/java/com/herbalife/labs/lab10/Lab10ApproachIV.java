@@ -3,6 +3,7 @@ package com.herbalife.labs.lab10;
 import java.util.Arrays;
 import java.util.Comparator;
 import java.util.List;
+import java.util.Optional;
 import java.util.function.BinaryOperator;
 import java.util.stream.Collectors;
 
@@ -11,21 +12,17 @@ public class Lab10ApproachIV {
 
     public static void main(String[] args) {
 
-        //items.stream().max(BinaryOperator.maxBy(Comparator.comparing(Item::getPrice)));
-
         Item costliestShoe = items
                 .stream()
-                .collect(Collectors.maxBy(Comparator.comparing(item -> item.getPrice())))
+                .reduce(BinaryOperator.maxBy(Comparator.comparing(Item::getPrice)))
                 .get();
         System.out.println(costliestShoe);
 
         Item cheapestShoe = items
                 .stream()
-                .collect(Collectors.minBy(Comparator.comparing(Item::getPrice)))
+                .reduce(BinaryOperator.minBy(Comparator.comparing(Item::getPrice)))
                 .get();
         System.out.println(cheapestShoe);
-
-
         concatNamesOfShoes();
     }
 
