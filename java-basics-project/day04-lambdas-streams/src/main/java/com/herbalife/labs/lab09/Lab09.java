@@ -10,18 +10,18 @@ public class Lab09 {
         items
                 .stream()
                 .map(it -> String.format("%s: %s", it.getName(), it.getPrice()))
-                .forEach(it -> System.out.println(it));
+                .forEach(System.out::println);
 
         items
                 .stream()
                 .filter(it -> it.getPrice() > 20)
                 .map(it -> it.getName())
-                .forEach(it -> System.out.println(it));
+                .forEach(System.out::println);
 
         List<String> names = items
                 .stream()
                 .map(it -> it.getName())
                 .collect(Collectors.toList());
-        names.forEach(it -> System.out.println(it));
+        names.forEach(System.out::println);
     }
 }
