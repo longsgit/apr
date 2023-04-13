@@ -33,6 +33,9 @@ docker run --name hl-mysql-day06  -p3306:3306 -e MYSQL_ROOT_PASSWORD=root mysql:
 
 ```
 docker run --name hl-mysql-day06  -p3306:3306 -v<folder_in_host_machine>:/var/lib/mysql   -e MYSQL_ROOT_PASSWORD=root mysql:latest
+```
+
+```
 docker run --name hl-mysql-day06  -p3306:3306 -vC:/data:/var/lib/mysql   -e MYSQL_ROOT_PASSWORD=root mysql:latest
 ```
 
