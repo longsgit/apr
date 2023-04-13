@@ -38,6 +38,15 @@ public class Lab11 {
         System.out.println(json);
     }
 
+    private static String getCityInJsonFormat2(String lineInCsv) {
+        return """
+                {
+                    "city": "%s",
+                    "country": "%s",
+                    "population": %d
+                }
+                """.formatted(csvProcessFunction.apply(0, lineInCsv), csvProcessFunction.apply(1, lineInCsv), csvProcessFunction.apply(2, lineInCsv)).stripLeading().stripTrailing();
+    }
 
     private static String getCityInJsonFormat(String lineInCsv) {
         StringBuilder jsonBuilder = new StringBuilder("");

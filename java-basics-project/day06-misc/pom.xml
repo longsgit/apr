@@ -4,10 +4,27 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>org.example</groupId>
-    <artifactId>day06-misc</artifactId>
-    <version>1.0-SNAPSHOT</version>
-
+    <groupId>com.herbalife.nutrition</groupId>
+    <artifactId>vitamins-lib</artifactId>
+    <version>1.0.0</version>
+    <!--    <repositories>-->
+    <!--        <repository>-->
+    <!--            <id>herbalife-maven</id>-->
+    <!--            <url>https://maven.herbalife.com</url>-->
+    <!--        </repository>-->
+    <!--    </repositories>-->
+    <dependencies>
+        <dependency>
+            <groupId>com.fasterxml.jackson.jaxrs</groupId>
+            <artifactId>jackson-jaxrs-json-provider</artifactId>
+            <version>2.14.2</version>
+        </dependency>
+        <dependency>
+            <groupId>com.google.code.gson</groupId>
+            <artifactId>gson</artifactId>
+            <version>2.10.1</version>
+        </dependency>
+    </dependencies>
     <properties>
         <maven.compiler.source>17</maven.compiler.source>
         <maven.compiler.target>17</maven.compiler.target>
