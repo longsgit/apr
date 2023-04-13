@@ -16,6 +16,14 @@ public class JdbcExample {
         loadAllPersonsWithAgeGt(20);
     }
 
+    /*
+    CREATE DEFINER=`root`@`%` PROCEDURE `sp_sel_persons_with_age_gt`(in age_param int)
+    BEGIN
+	    select * from persons where age > age_param;
+    END
+    *
+    * */
+
     private static void loadAllPersonsWithAgeGt(int ageParam) throws SQLException {
         Connection connection = null;
         try {
