@@ -1,5 +1,6 @@
 package com.herbalife.examples;
 
+import java.lang.annotation.Annotation;
 import java.lang.reflect.Constructor;
 import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
@@ -31,9 +32,14 @@ public class Reflection {
                 method.invoke(sam, "Bread");
             }
         }
+        for(Annotation annotation : personClass.getDeclaredAnnotations()) {
+            if(annotation instanceof Entity) {
+                System.out.println("Entity annotation is present");
+            }
+        }
     }
 }
-
+@Entity
 class Person {
     private String name;
     private int age;
