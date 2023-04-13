@@ -32,7 +32,7 @@ docker run --name hl-mysql-day06  -p3306:3306 -e MYSQL_ROOT_PASSWORD=root mysql:
 #### Configure volumes
 
 ```
-docker run --name hl-mysql-day06  -p3306:3306 -v<host_volume_folder>:/var/lib/mysql   -e MYSQL_ROOT_PASSWORD=root mysql:latest
+docker run --name hl-mysql-day06  -p3306:3306 -v<folder_in_host_machine>:/var/lib/mysql   -e MYSQL_ROOT_PASSWORD=root mysql:latest
 ```
 
 
