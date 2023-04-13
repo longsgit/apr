@@ -12,7 +12,33 @@ public class JdbcExample {
         //handle exceptions
 //        createPerson("Ram", "Narain", 32);
 //        createPerson("Mary", "Joe", 45);
-        loadAll();
+        //loadAll();
+        loadAllPersonsWithAgeGt(20);
+    }
+
+    private static void loadAllPersonsWithAgeGt(int ageParam) throws SQLException {
+        Connection connection = null;
+        try {
+            Class.forName("com.mysql.cj.jdbc.Driver");
+            connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/training", "root", "root");
+            String query = "{call sp_sel_persons_with_age_gt(?)}";
+            CallableStatement callableStatement = connection.prepareCall(query);
+            callableStatement.setInt("age_param", ageParam);
+            ResultSet resultSet = callableStatement.executeQuery();
+            while (resultSet.next()) {
+                int id = resultSet.getInt("id");
+                String firstName = resultSet.getString("first_name");
+                String lastName = resultSet.getString("last_name");
+                int age = resultSet.getInt("age");
+                System.out.println("%s, %s, %s, %s".formatted(id, firstName, lastName, age));
+            }
+            resultSet.close();
+            callableStatement.close();
+        } catch (ClassNotFoundException | SQLException e) {
+            e.printStackTrace();
+        } finally {
+            connection.close();
+        }
     }
 
     private static void loadAll() throws SQLException {
@@ -23,7 +49,7 @@ public class JdbcExample {
             Statement statement = connection.createStatement();
             String query = "select * from persons";
             ResultSet resultSet = statement.executeQuery(query);
-            while(resultSet.next()) {
+            while (resultSet.next()) {
                 int id = resultSet.getInt("id");
                 String firstName = resultSet.getString("first_name");
                 String lastName = resultSet.getString("last_name");
@@ -32,9 +58,7 @@ public class JdbcExample {
             }
             resultSet.close();
             statement.close();
-        } catch (ClassNotFoundException e) {
-            e.printStackTrace();
-        } catch (SQLException e) {
+        } catch (ClassNotFoundException | SQLException e) {
             e.printStackTrace();
         } finally {
             connection.close();
