@@ -86,8 +86,17 @@
 * Streams are lazily evaluated. Unless the terminal statement(get, forEach) is met, the streams are not evaluated
 * collect, map, filter, skip, distinct, reduce
 
+### Packages
 
-
+* java library is organized into modules
+* Each module is organized into packages
+* base module which contains all the core packages
+* **java.lang** package is imported by default in all our code
+* You can build an application and have modules or packages as the high level grouping
+* The deployable entity in java applications is a jar(most part of it)
+* A **jar** file a collection of packages. It's like a zip file
+* java.util, java.io, java.nio, java.sql, java.time, java.net, java.xml
+* **java.util.concurrent** contains all the classes that can be used for building concurrent applications
 
 
 

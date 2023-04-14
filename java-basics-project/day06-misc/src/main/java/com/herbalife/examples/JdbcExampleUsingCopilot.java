@@ -6,6 +6,13 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 public class JdbcExampleUsingCopilot {
+
+    public static final String FIRST_NAME = "first_name";
+    public static final String LAST_NAME = "last_name";
+    public static final String AGE = "age";
+    public static final String ID = "id";
+
+
     public static void main(String[] args) throws SQLException {
         createPerson("Sam", "Thompson", 34);
         loadAllPersons();
@@ -19,10 +26,10 @@ public class JdbcExampleUsingCopilot {
             connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/training", "root", "root");
             ResultSet resultSet = connection.createStatement().executeQuery("SELECT * FROM persons");
             while (resultSet.next()) {
-                String firstName = resultSet.getString("first_name");
-                String lastName = resultSet.getString("last_name");
-                int age = resultSet.getInt("age");
-                int id = resultSet.getInt("id");
+                String firstName = resultSet.getString(FIRST_NAME);
+                String lastName = resultSet.getString(LAST_NAME);
+                int age = resultSet.getInt(AGE);
+                int id = resultSet.getInt(ID);
                 System.out.println("%s, %s, %s, %s".formatted(firstName, lastName, age, id));
             }
             resultSet.close();
