@@ -10,7 +10,9 @@ public class ParallelStreams {
         //It uses a ForkJoinPool internally
         //You can override the thread count by creating a custom forkjoinpool and submitting the parallel stream to it
 
-        ForkJoinPool fjp = new ForkJoinPool(80);
+        int numberOfCores = Runtime.getRuntime().availableProcessors();
+        int numberOfThreadsForIOOperations = (int)(numberOfCores / (1 - 0.9));
+        ForkJoinPool fjp = new ForkJoinPool(numberOfThreadsForIOOperations);
 
         LongStream numbers = LongStream.range(1, 10000000L);
 
