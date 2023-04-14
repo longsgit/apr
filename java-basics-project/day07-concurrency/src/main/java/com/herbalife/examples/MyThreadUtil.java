@@ -8,4 +8,7 @@ public class MyThreadUtil {
             e.printStackTrace();
         }
     }
+    public static String name() {
+        return Thread.currentThread().getName();
+    }
 }
