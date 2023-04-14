@@ -1,4 +1,4 @@
-package com.herbalife.labs.lab11;
+package com.herbalife.labs.lab12;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
