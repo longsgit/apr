@@ -14,7 +14,9 @@ import java.nio.charset.Charset;
 import java.sql.SQLException;
 import java.util.List;
 import java.util.Map;
+import java.util.concurrent.ExecutionException;
 import java.util.concurrent.ForkJoinPool;
+import java.util.concurrent.ForkJoinTask;
 import java.util.stream.Collectors;
 
 public class MoviesFetcher {
@@ -23,27 +25,29 @@ public class MoviesFetcher {
     private ObjectMapper objectMapper = new ObjectMapper();
     private ForkJoinPool forkJoinPool = new ForkJoinPool((int) (Runtime.getRuntime().availableProcessors() / (1 - 0.9)));
 
-    public Map<Boolean, List<MovieModel>> fetchMovieDetails(List<String> movies) {
-
-        Map<Boolean, List<MovieModel>> moviesMap = movies
-                .stream()
-                .parallel()
-                .map(this::fetchDetailsFromOmdb)
-                .filter(e -> e != null)
-                .map(this::parseMovieResponse)
-                .collect(Collectors.groupingBy(MovieModel::isResponse));
-        moviesMap
-                .get(true)
-                .stream()
-                .parallel()
-                .forEach(movieModel -> {
-                    try {
-                        MoviesDbUtil.insert(movieModel.getTitle(), movieModel.getYear(), movieModel.getGenre(), movieModel.getLanguage());
-                    } catch (SQLException e) {
-                        e.printStackTrace();
-                    }
-                });
-        return moviesMap;
+    public Map<Boolean, List<MovieModel>> fetchMovieDetails(List<String> movies) throws ExecutionException, InterruptedException {
+       var forkJoinTask = forkJoinPool.submit(() -> {
+           Map<Boolean, List<MovieModel>> moviesMap = movies
+                   .stream()
+                   .parallel()
+                   .map(this::fetchDetailsFromOmdb)
+                   .filter(e -> e != null)
+                   .map(this::parseMovieResponse)
+                   .collect(Collectors.groupingBy(MovieModel::isResponse));
+           moviesMap
+                   .get(true)
+                   .stream()
+                   .parallel()
+                   .forEach(movieModel -> {
+                       try {
+                           MoviesDbUtil.insert(movieModel.getTitle(), movieModel.getYear(), movieModel.getGenre(), movieModel.getLanguage());
+                       } catch (SQLException e) {
+                           e.printStackTrace();
+                       }
+                   });
+           return moviesMap;
+       });
+        return forkJoinTask.get();
     }
 
     private MovieModel parseMovieResponse(String movieDetailsJson) {

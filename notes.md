@@ -98,6 +98,64 @@
 * java.util, java.io, java.nio, java.sql, java.time, java.net, java.xml
 * **java.util.concurrent** contains all the classes that can be used for building concurrent applications
 
+### Spring framework
+
+* JDK for the core libraries that you can use to build applications in Java
+* Web applications, Messaging, Security, Web services, SOAP-based or RESTful style, XML, Email, Transactions, EJB
+* JEE sdk (Java Enterprise Edition)
+* Enterprise Java Beans (EJB) or **System.EnterpriseServices**
+
+
+``` java
+class Account {
+	accountNumber, balance;
+	void deposit(amount) {}
+	void withdraw(amount) {}
+	void transferFund(to, amount) {}	
+}
+```
+
+* Object pooling 
+* Transaction for transferFund
+* Security for withdraw and transferFund
+* EJB comes to the rescue. EJB is a way by which you can provide enterprise services like Object pooling, txn, security to the classes in your application
+* EJB made the design of the code very complicated
+* FOllow some rules while writing code
+* Implements 2-3 interfaces; No constructors; No static methods; Should not throw RuntimeException; Should not have final variables;
+* **Heavy-weight** container
+
+
+* Enter spring framework
+* POJO framework for building enterprise applications in Java
+* Light-weight container
+* It provides all the services that your application needs without asking to you to change the design 
+* Technically Spring framework is a collection of jar files that you add to your classpath/build path
+* **Dependency Injection**: Mechanism by which you avoid unneccessary creation and lookup code in your application
+* latest version is 6.x
+* Web apps, console applications, messaging applications, cron jobs
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
