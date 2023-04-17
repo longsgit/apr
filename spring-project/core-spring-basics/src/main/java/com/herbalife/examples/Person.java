@@ -9,6 +9,8 @@ public class Person {
     private Car car;
 
     public void driveToOffice() {
+        car.getLeftFrontDoor().open();
+        car.getLeftFrontDoor().close();
         System.out.println("Using " + car + " to go to the office");
     }
 }
