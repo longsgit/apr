@@ -135,9 +135,32 @@ class Account {
 * Web apps, console applications, messaging applications, cron jobs
 
 
+### Creating a spring application
+
+* Create a Maven/Gradle project
+* Add the spring dependency to pom.xml
+* Create a configuration xml file in resources folder
+* Configure component:scan and base package in the xml file
+* **Create classes and mark them as @Component and auto wire them using @Autowired** --> except this, all other steps are mundane and can be automated
+* Create a class with a main method
+* Create ApplicationContext container and access the beans
 
 
+### Spring boot
 
+* It's an agile way of creating spring applications
+* Spring boot is an abstraction of spring framework
+* Spring boot is 3.x
+
+### ApplicationContext
+
+* All the components are instantiated during startup itself, whether you use it or not
+* ApplicationContext is an active container
+* It instantiates all the components during startup. So any exception can be caught during startup itself; Any performance impact, it's only during the startup and not afterwards
+* **@Lazy** is used to defer the instantiation of the beans
+* All the components are in **singleton** scope by default. ie., throughout your application there is only one instance of the bean created
+* You can change the scope by using **@Scope** annotation
+* Since all the beans are in singleton scope, you don't maintain user specific data inside a component. Most components are designed to be stateless or generic
 
 
 

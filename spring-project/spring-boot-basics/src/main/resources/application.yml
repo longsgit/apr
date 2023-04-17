@@ -1,0 +1,8 @@
+#company.name=HP
+#company.employees=20000
+#company.countries=India,USA,England,France
+
+company:
+  name: HP
+  employees: 20000
+  countries: India,USA,England,France
