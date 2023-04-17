@@ -1,10 +1,15 @@
 package com.herbalife.examples;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
 
 @Component
 public class Car {
+
+    @Value("BMW")
+    private String model;
+
     @Autowired
     private Door leftFrontDoor;
     @Autowired
@@ -14,7 +19,12 @@ public class Car {
     @Autowired
     private Door rightRearDoor;
 
-
+    @Override
+    public String toString() {
+        return "Car{" +
+                "model='" + model + '\'' +
+                '}';
+    }
 
     public Door getLeftFrontDoor() {
         return leftFrontDoor;
