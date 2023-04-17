@@ -6,3 +6,17 @@ company:
   name: HP
   employees: 20000
   countries: India,USA,England,France
+
+book-store:
+  name: Penquin
+  titles: 20000
+  categories:
+    - Fiction
+    - Science Fiction
+    - Sales
+    - Programming
+    - Marketing
+  locations:
+    - India: 10
+    - USA: 50
+    - England: 45
