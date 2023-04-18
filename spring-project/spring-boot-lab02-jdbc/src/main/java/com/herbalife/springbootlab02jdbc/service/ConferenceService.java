@@ -1,5 +1,7 @@
 package com.herbalife.springbootlab02jdbc.service;
 
+import static com.herbalife.springbootlab02jdbc.constants.Messages.*;
+
 import com.herbalife.springbootlab02jdbc.exception.TopicFoundException;
 import com.herbalife.springbootlab02jdbc.exception.TopicNotFoundException;
 import com.herbalife.springbootlab02jdbc.model.Topic;
@@ -23,7 +25,7 @@ public class ConferenceService {
         int count = topicsDao.getCountOf(title);
         if (count == 0) {
             topicsDao.create(title, duration);
-            logger.info("Topic with title: {} created", title);
+            logger.info(TOPIC_WITH_TITLE_CREATED, title);
         } else {
             throw new TopicFoundException(title);
         }
@@ -41,7 +43,7 @@ public class ConferenceService {
         int count = topicsDao.getCountOf(title);
         if (count == 1) {
             topicsDao.delete(title);
-            logger.info("Topic with title: {} deleted", title);
+            logger.info(TOPIC_WITH_TITLE_DELETED, title);
         } else {
             throw new TopicNotFoundException(title);
         }
