@@ -1,0 +1,24 @@
+new-age-conference:
+  topics:
+    - { title: "RoR", duration: 90 }
+    - { title: "Unit testing JS", duration: 90 }
+    - { title: "Spring unit testing", duration: 90 }
+    - { title: "Functional programming with Elixir", duration: 60 }
+    - { title: "Concurrency on the JVM", duration: 60 }
+    - { title: "Goroutines", duration: 45 }
+    - { title: "Scala tricks", duration: 45 }
+
+conference:
+  topics:
+    90:
+      - RoR
+      - Unit testing JavaScript
+      - Spring Unit testing
+    60:
+      - Functional programming with Erlang
+      - Concurrency on the JVM
+    45:
+      - Goroutines
+      - Scala Tricks
+
+
