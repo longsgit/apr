@@ -17,10 +17,11 @@ public class JdbcWithSpringBootApplication implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
-        personsDao.getAllPersons().forEach(record -> {
-            record.forEach((col, value) -> System.out.println(col + ": " + value));
-            System.out.println();
-        });
+        personsDao.getAll().forEach(System.out::println);
+//        personsDao.getAllPersons().forEach(record -> {
+//            record.forEach((col, value) -> System.out.println(col + ": " + value));
+//            System.out.println();
+//        });
 //        personsDao.getAllFirstNames().forEach(System.out::println);
 //        personsDao.insert("Mary", "Joe", 34);
 //        personsDao.delete(3);

@@ -4,6 +4,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Component;
 
+import java.sql.ResultSet;
 import java.util.List;
 import java.util.Map;
 
@@ -12,6 +13,18 @@ public class PersonsDao {
 
     @Autowired
     private JdbcTemplate jdbcTemplate;
+
+    public List<Person> getAll() {
+        String query = "select * from persons";
+        return jdbcTemplate.query(query, (ResultSet resultSet, int rowNum) -> {
+            Person person = new Person(resultSet.getInt("id"),
+                    resultSet.getString("first_name"),
+                    resultSet.getString("last_name"),
+                    resultSet.getInt("age")
+            );
+            return person;
+        });
+    }
 
     public List<String> getAllFirstNames() {
         //YOUR CODE GOES HERE
