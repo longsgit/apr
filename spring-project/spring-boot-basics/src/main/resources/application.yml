@@ -1,6 +1,9 @@
 #company.name=HP
 #company.employees=20000
 #company.countries=India,USA,England,France
+
+bank-name: Citibank
+
 course:
   topics: A,b,C
 
