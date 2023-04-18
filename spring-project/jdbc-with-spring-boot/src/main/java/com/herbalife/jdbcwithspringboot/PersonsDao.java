@@ -2,9 +2,13 @@ package com.herbalife.jdbcwithspringboot;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
+import org.springframework.jdbc.core.SqlParameter;
+import org.springframework.jdbc.core.simple.SimpleJdbcCall;
 import org.springframework.stereotype.Component;
 
 import java.sql.ResultSet;
+import java.sql.Types;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
@@ -13,6 +17,20 @@ public class PersonsDao {
 
     @Autowired
     private JdbcTemplate jdbcTemplate;
+
+
+    public void callStoredProc(int ageParam) {
+        SimpleJdbcCall simpleJdbcCall = new SimpleJdbcCall(jdbcTemplate).withProcedureName("sp_sel_persons_with_age_gt");
+        simpleJdbcCall.declareParameters(new SqlParameter("age_param", Types.INTEGER));
+        Map<String, Object> resultMap = simpleJdbcCall.execute(ageParam);
+        resultMap.forEach((key, value) -> {
+            System.out.println(key);
+            if(value instanceof ArrayList) {
+                ((ArrayList<?>) value).forEach(System.out::println);
+            }
+            System.out.println();
+        });
+    }
 
     public List<Person> getAll() {
         String query = "select * from persons";

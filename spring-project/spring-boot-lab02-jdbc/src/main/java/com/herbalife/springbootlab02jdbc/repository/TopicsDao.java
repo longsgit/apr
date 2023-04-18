@@ -2,6 +2,9 @@ package com.herbalife.springbootlab02jdbc.repository;
 
 import com.herbalife.springbootlab02jdbc.model.Topic;
 import com.herbalife.springbootlab02jdbc.model.TopicRecord;
+import com.herbalife.springbootlab02jdbc.service.ConferenceService;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
@@ -15,6 +18,8 @@ import static com.herbalife.springbootlab02jdbc.constants.Queries.*;
 public class TopicsDao {
     @Autowired
     private JdbcTemplate jdbcTemplate;
+
+    private static Logger logger = LoggerFactory.getLogger(TopicsDao.class);
 
     public int getCountOf(String title) {
         return jdbcTemplate.queryForObject(SELECT_TOPIC_COUNT, Integer.class, title);

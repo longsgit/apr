@@ -17,7 +17,8 @@ public class JdbcWithSpringBootApplication implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
-        personsDao.getAll().forEach(System.out::println);
+        personsDao.callStoredProc(10);
+//        personsDao.getAll().forEach(System.out::println);
 //        personsDao.getAllPersons().forEach(record -> {
 //            record.forEach((col, value) -> System.out.println(col + ": " + value));
 //            System.out.println();

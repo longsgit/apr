@@ -19,7 +19,7 @@ public class ConferenceService {
     @Autowired
     private TopicsDao topicsDao;
 
-    private Logger logger = LoggerFactory.getLogger(ConferenceService.class);
+    private static Logger logger = LoggerFactory.getLogger(ConferenceService.class);
 
     public void addTopic(String title, int duration) {
         int count = topicsDao.getCountOf(title);
