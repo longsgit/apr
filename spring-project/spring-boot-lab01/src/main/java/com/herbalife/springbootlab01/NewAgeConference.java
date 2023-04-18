@@ -1,5 +1,6 @@
 package com.herbalife.springbootlab01;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.stereotype.Component;
 
@@ -7,8 +8,9 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 @Component
-@ConfigurationProperties(prefix = "new-age-conference")
+//@ConfigurationProperties(prefix = "new-age-conference")
 public class NewAgeConference {
+    @Autowired
     private List<Topic> topics;
 
     public List<Topic> getTopics() {

@@ -36,12 +36,19 @@ public class SpringBootBasicsApplication implements CommandLineRunner {
     @Autowired
     private BookStore bookStore;
 
+    @Autowired
+    private Course course;
+
     @Override
     public void run(String... args) throws Exception {
         //STARTING POINT FOR YOUR APPLICATION
         //EXECUTES AFTER APPLICATIONCONTEXT IS CREATED AND ALL THE BEANS ARE LOADED
 
-        System.out.println(bookStore);
+        course.getTopics().forEach(System.out::println);
+
+
+
+//        System.out.println(bookStore);
 
 //        System.out.println(company.getName() + ", " + company.getNumberOfEmployees());
 //        company.getCountries().forEach(System.out::println);

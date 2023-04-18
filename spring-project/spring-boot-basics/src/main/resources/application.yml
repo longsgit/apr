@@ -1,6 +1,8 @@
 #company.name=HP
 #company.employees=20000
 #company.countries=India,USA,England,France
+course:
+  topics: A,b,C
 
 company:
   name: HP
