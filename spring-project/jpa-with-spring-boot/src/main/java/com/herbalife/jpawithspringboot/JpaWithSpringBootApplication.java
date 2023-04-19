@@ -22,7 +22,13 @@ public class JpaWithSpringBootApplication implements CommandLineRunner {
     public void run(String... args) throws Exception {
 //        reflectPersonsDao();
 //        basicCRUDOperations();
+//        finderMethods();
 
+        personsDao.computePersonsWithAgeBetween(10, 50).forEach(System.out::println);
+
+    }
+
+    private void finderMethods() {
         personsDao
                 .findAllByAgeGreaterThan(10)
                 .forEach(System.out::println);
@@ -33,7 +39,6 @@ public class JpaWithSpringBootApplication implements CommandLineRunner {
         personsDao
                 .findAllByFirstNameIn(Arrays.asList("Sam", "Ram", "Mary", "Martin"))
                 .forEach(System.out::println);
-
     }
 
     private void reflectPersonsDao() {
