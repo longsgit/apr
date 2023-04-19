@@ -24,9 +24,13 @@ public class JpaWithSpringBootApplication implements CommandLineRunner {
 //        basicCRUDOperations();
 //        finderMethods();
 
-        personsDao.computePersonsWithAgeBetween(10, 50).forEach(System.out::println);
+        //personsDao.computePersonsWithAgeBetween(10, 50).forEach(System.out::println);
 
+        //personsDao.updateAge(1, 67); //Will not work because the method needs a transaction
+        //personsDao.deletePerson(1); //Will not work because the method needs a transaction
     }
+
+
 
     private void finderMethods() {
         personsDao
