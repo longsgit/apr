@@ -2,8 +2,16 @@ package com.herbalife.springbootrestapi;
 
 import org.springframework.web.bind.annotation.*;
 
+import java.util.Arrays;
+import java.util.List;
+
 @RestController
 public class WelcomeController {
+
+    @GetMapping("/topics")
+    public List<String> getTopics() {
+        return Arrays.asList("Spring boot", "Rest", "JPA");
+    }
 
     @GetMapping("/hello")
     public String hello() {
