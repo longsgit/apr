@@ -162,9 +162,15 @@ class Account {
 * You can change the scope by using **@Scope** annotation
 * Since all the beans are in singleton scope, you don't maintain user specific data inside a component. Most components are designed to be stateless or generic
 
+### Jdbc with Spring
 
+* Spring data Jdbc
+* Autowire JdbcTemplate and use it for all the CRUD operations
+* RowMapper, SimpleJdbcCall for stored procedures
+* https://github.com/brettwooldridge/HikariCP
+* **show status where variable_name="threads_connected";**
 
-
+### ORM
 
 
 
