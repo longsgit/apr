@@ -2,6 +2,8 @@ package com.herbalife.jpawithspringboot;
 
 import jakarta.persistence.*;
 
+import java.util.List;
+
 @Entity
 @Table(name = "persons")
 public class Person {
@@ -18,6 +20,18 @@ public class Person {
 
     @Column(name = "age")
     private int age;
+
+    @OneToMany(fetch = FetchType.LAZY)
+    @JoinColumn(name = "person_id")
+    private List<Dog> dogs;
+
+    public List<Dog> getDogs() {
+        return dogs;
+    }
+
+    public void setDogs(List<Dog> dogs) {
+        this.dogs = dogs;
+    }
 
     public int getId() {
         return id;

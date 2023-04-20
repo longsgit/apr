@@ -10,6 +10,25 @@ import java.util.Optional;
 
 public interface PersonRepository extends JpaRepository<Person, Integer> {
 
+
+    @Query(value = "select p from Person p where p.dogs.size >= 1")
+    List<Person> fetchPersonsWithAlteastOneDog();
+
+    @Query(value = "select p from Person p join fetch p.dogs")
+    List<Person> fetchPersonAndDogDetails();
+
+
+
+
+
+
+
+
+
+
+
+
+
     //Needs to be executed inside a Transaction
     @Modifying
     @Query(value = "update Person p set p.age = :age where p.id = :id")

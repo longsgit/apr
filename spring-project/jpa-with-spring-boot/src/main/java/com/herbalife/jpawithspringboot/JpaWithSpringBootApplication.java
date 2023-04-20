@@ -5,7 +5,9 @@ import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 import java.util.Optional;
 
 @SpringBootApplication
@@ -18,18 +20,73 @@ public class JpaWithSpringBootApplication implements CommandLineRunner {
     @Autowired
     private PersonRepository personRepository;
 
+    @Autowired
+    private CarRepository carRepository;
+
+    @Autowired
+    private DogRepository dogRepository;
+
     @Override
     public void run(String... args) throws Exception {
+
+        Dog snoopy = new Dog();
+        snoopy.setName("Snoopy");
+        dogRepository.save(snoopy);
+
+        Dog rover = new Dog();
+        rover.setName("Rover");
+        dogRepository.save(rover);
+
+        Person virat = new Person();
+        virat.setFirstName("Virat");
+        virat.setLastName("Kohli");
+        virat.setAge(35);
+        List<Dog> pets = new ArrayList<>();
+        pets.add(snoopy);
+        pets.add(rover);
+        virat.setDogs(pets);
+        personRepository.save(virat);
+
+
+
+//        System.out.println("*******FETCH WITHOUT PERSON DETAILS");
+//        Car car = carRepository.findById(1).get();
+//        System.out.println(car.getModel());
+//
+//        System.out.println("*******FETCH ALONG WITH PERSON DETAILS");
+//        Car car2 = carRepository.fetchCarWithPersonDetails(2);
+//        System.out.println(car2.getModel());
+//        System.out.println(car2.getOwner());
+
+
+//        Person joe = new Person();
+//        joe.setFirstName("Joe");
+//        joe.setLastName("Martin");
+//        joe.setAge(40);
+//        personRepository.save(joe);
+//
+//        Car bmw = new Car();
+//        bmw.setModel("BMW 8");
+//        bmw.setYear(2020);
+//        bmw.setOwner(joe);
+//
+//        Car tesla = new Car();
+//        tesla.setModel("TESLA");
+//        tesla.setYear(2022);
+//        tesla.setOwner(joe);
+//
+//        carRepository.save(bmw);
+//        carRepository.save(tesla);
+
 //        reflectPersonsDao();
 //        basicCRUDOperations();
 //        finderMethods();
 
-        //personsDao.computePersonsWithAgeBetween(10, 50).forEach(System.out::println);
-
-        //personsDao.updateAge(1, 67); //Will not work because the method needs a transaction
-        //personsDao.deletePerson(1); //Will not work because the method needs a transaction
+//        personsDao.computePersonsWithAgeBetween(10, 50).forEach(System.out::println);
+//
+//        personsDao.updateAge(1, 67); //Will not work because the method needs a transaction
+//        personsDao.deletePerson(1); //Will not work because the method needs a transaction
     }
-
 
 
     private void finderMethods() {
