@@ -23,13 +23,28 @@ public class ConferenceController {
 
     @PostMapping
     public HttpEntity<Void> addTopic(@RequestBody TopicDto topicDto) {
-        conferenceService.addTopic(topicDto.getTitle(), topicDto.getDuration());
+        conferenceService.addTopic(topicDto.title(), topicDto.duration());
+        //conferenceService.addTopic(topicDto.getTitle(), topicDto.getDuration());
         return new ResponseEntity<>(HttpStatus.CREATED);
     }
 
     @GetMapping
     public List<Topic> getAllTopics() {
         return conferenceService.getAllTopics();
+    }
+
+    @DeleteMapping
+    public HttpEntity<Void> removeTopic(@RequestBody TopicDto topicDto) {
+        //conferenceService.removeTopic(topicDto.getTitle());
+        conferenceService.removeTopic(topicDto.title());
+        return new ResponseEntity<>(HttpStatus.NO_CONTENT);
+    }
+
+    @PatchMapping
+    public HttpEntity<Void> updateDuration(@RequestBody TopicDto topicDto) {
+        //conferenceService.updateDuration(topicDto.getTitle(), topicDto.getDuration());
+        conferenceService.updateDuration(topicDto.title(), topicDto.duration());
+        return new ResponseEntity<>(HttpStatus.OK);
     }
 
 }

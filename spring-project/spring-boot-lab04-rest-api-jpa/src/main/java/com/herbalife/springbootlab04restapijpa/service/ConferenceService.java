@@ -5,6 +5,7 @@ import com.herbalife.springbootlab04restapijpa.entity.Topic;
 import com.herbalife.springbootlab04restapijpa.exception.TopicFoundException;
 import com.herbalife.springbootlab04restapijpa.exception.TopicNotFoundException;
 import com.herbalife.springbootlab04restapijpa.repository.TopicRepository;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -13,6 +14,7 @@ import java.util.List;
 import java.util.Optional;
 
 @Service
+@Slf4j
 public class ConferenceService {
 
     @Autowired
@@ -25,6 +27,7 @@ public class ConferenceService {
             topic.setTitle(title);
             topic.setDuration(duration);
             topicRepository.save(topic);
+            log.info("Topic {} created", title);
         } else {
             throw new TopicFoundException(title);
         }
@@ -37,6 +40,7 @@ public class ConferenceService {
     @Transactional
     public void removeTopic(String title) {
         int deletedRowCount = topicRepository.remove(title);
+        log.info("Topic {} removed", title);
         if(deletedRowCount != 1) {
             throw new TopicNotFoundException(title);
         }
