@@ -172,6 +172,42 @@ class Account {
 
 ### ORM
 
+* Spring boot uses **Hibernate** implementation of JPA by default
+* Create Entity classes and map them with the tables
+* *@Id, @Column, @Entity, @Table*
+* Define a repository interface by specifying the Entity class and Primary Key type
+* Spring boot generates a class that implements the repository during runtime
+* You can define finder methods in the repository
+* You can define custom methods but need to use @Query annotation and specify the query to resolve the method
+* Queries can be written in JPQL or Native SQL
+* **JPQL**; you query entity classes and variables
+* You can have **@Modifying** queries update/delete. But you need to execute the method in a transactional context
+* You can mark the methods as **@Transactional** to execute the code in a transaction
+
+
+### REST API
+
+* API refers to RESTful services or applications, these days  
+* Adding Spring Web dependency
+* Internally Spring MVC is the framework that's used to build the REST API
+* Apache Tomcat is the server that's used by default
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
