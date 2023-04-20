@@ -1,2 +1,3 @@
+welcome: Default welcome
 server:
   port: 8081
