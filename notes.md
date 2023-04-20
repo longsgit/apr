@@ -192,8 +192,11 @@ class Account {
 * Internally Spring MVC is the framework that's used to build the REST API
 * Apache Tomcat is the server that's used by default
 
+### Softwares
 
-
+* Offset Explorer (Kafka UI Client)
+* Lens (Similar to Docker Desktop, but it's for k8s)
+* Have "Kubernetes" enabled in Docker Desktop. Go to settings/preferences and "Enable Kubernetes"
 
 
 
