@@ -70,6 +70,19 @@ docker run --name nameOfTheImage -phost:container my-api:0.0.1
 ```
 
 
+### Environment variables
+
+``` Dockerfile
+FROM openjdk:17
+COPY target/yourjarFile.jar app.jar
+EXPOSE 8080
+ENV WELCOME "Default Welcome"
+ENTRYPOINT ["java", "-jar", "-Dwelcome=${WELCOME}", "/app.jar"]
+```
+
+```
+docker run --name nameOfTheImage -phost:container -e WELCOME="Welcome to Spring" my-api:0.0.1
+```
 
 
 
