@@ -199,7 +199,12 @@ class Account {
 * Have "Kubernetes" enabled in Docker Desktop. Go to settings/preferences and "Enable Kubernetes"
 
 
+### Last week
 
+* ORM -> @OneToMany, @ManyToOne, Lazy Fetching
+* Spring profiles -> Environments
+* application-dev.yml or application-qa.yml
+* Pass -Dspring.profiles.active=dev while launching the application
 
 
 

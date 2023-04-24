@@ -40,8 +40,32 @@ docker run --name hl-mysql-day06  -p3306:3306 -vC:/data:/var/lib/mysql   -e MYSQ
 ```
 
 
+### Dockerizing Spring boot REST
 
+``` Dockerfile
+FROM openjdk:17
+COPY target/yourjarFile.jar app.jar
+ENTRYPOINT ["java", "-jar", "/app.jar"]
+```
 
+* Bundle the image
+
+```
+docker build -t my-api:0.0.1 .
+```
+
+* This command looks for **Dockerfile** in the current folder
+* If you have a docker file named as **Dockerfile-dev**
+
+```
+docker build -t my-api:0.0.1 -f ./Dockerfile-dev
+```
+
+* Run the image
+
+```
+docker run --name nameOfTheImage -phost:container my-api:0.0.1
+```
 
 
 
