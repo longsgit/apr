@@ -1,0 +1,3 @@
+palindrome-api:
+  host: localhost
+  port: 9090
