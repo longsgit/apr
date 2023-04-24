@@ -10,4 +10,5 @@ COPY target/spring-boot-more-on-rest-api-0.0.1.jar app.jar
 #EXPOSE is not mandatory; It helps if you run from Docker Desktop UI
 EXPOSE 8080
 ENV WELCOME "Default Welcome"
-ENTRYPOINT ["java", "-jar", "-Dwelcome=${WELCOME}", "/app.jar"]
+ENV VENUE "US"
+ENTRYPOINT ["java", "-jar", "-Dwelcome=${WELCOME}", "-Dvenue=${VENUE}", "/app.jar"]
