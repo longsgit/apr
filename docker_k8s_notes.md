@@ -93,7 +93,7 @@ docker-compose -p lab05 up -d
 ```
 
 ```
-docker-compose -p lab05 down -d
+docker-compose -p lab05 down --rmi all
 ```
 
 
