@@ -45,6 +45,8 @@ docker run --name hl-mysql-day06  -p3306:3306 -vC:/data:/var/lib/mysql   -e MYSQ
 ``` Dockerfile
 FROM openjdk:17
 COPY target/yourjarFile.jar app.jar
+#EXPOSE is not mandatory; It helps if you run from Docker Desktop UI
+EXPOSE 8080
 ENTRYPOINT ["java", "-jar", "/app.jar"]
 ```
 
