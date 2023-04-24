@@ -84,7 +84,17 @@ ENTRYPOINT ["java", "-jar", "-Dwelcome=${WELCOME}", "/app.jar"]
 docker run --name nameOfTheImage -phost:container -e WELCOME="Welcome to Spring" my-api:0.0.1
 ```
 
+### docker compose
 
+* Configure yml file and list all the services and run them at one shot
+
+```
+docker-compose -p lab05 up -d
+```
+
+```
+docker-compose -p lab05 down -d
+```
 
 
 
