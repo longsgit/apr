@@ -207,6 +207,20 @@ class Account {
 * Pass -Dspring.profiles.active=dev while launching the application
 
 
+### Spring MVC
+
+* Heart of a spring boot web application is a **DispatcherServlet**
+* It stands in the front, receives requests from users, dispatches the requests to controllers for processing; gets the response and sends it to the users
+* Controllers or RestControllers
+* @RestController returns data as response
+* @Controller returns view information. The view has to be resolved to a concrete page(jsp or html or pdf or excel)
+* You can use @Controller/View resolvers/templates/static folder when you want to develop a traditional web application
+
+### Synchronous communication with other services
+
+* Send a request, wait for the response
+* **HttpClient** (Core Java 11), **RestTemplate**(maintainence mode), **WebClient**(*preferred*) classes can be used to communicate
+* You can configure these classes as @Bean and autowire them instead of creating an instance every time
 
 
 
