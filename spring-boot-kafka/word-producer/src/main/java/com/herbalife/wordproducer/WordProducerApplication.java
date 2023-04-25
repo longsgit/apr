@@ -6,6 +6,8 @@ import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.kafka.core.KafkaTemplate;
 
+import java.util.stream.IntStream;
+
 @SpringBootApplication
 public class WordProducerApplication implements CommandLineRunner {
 
@@ -19,6 +21,9 @@ public class WordProducerApplication implements CommandLineRunner {
     @Override
     public void run(String... args) throws Exception {
         String topic = "word-topic";
-        kafkaTemplate.send(topic, "WORD2");
+        IntStream
+                .range(10, 21)
+                .forEach(num -> kafkaTemplate.send(topic, "MyWORD: " + num));
+        //kafkaTemplate.send(topic, "WORD2");
     }
 }

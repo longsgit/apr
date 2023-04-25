@@ -3,7 +3,7 @@ package com.herbalife.wordconsumer;
 import org.springframework.kafka.annotation.KafkaListener;
 import org.springframework.stereotype.Component;
 
-@Component
+//@Component
 public class WordConsumer {
 
     @KafkaListener(topics = "word-topic", groupId = "word-consumer-group-console3")
