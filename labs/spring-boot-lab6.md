@@ -18,5 +18,6 @@
 * This consumer listens to __square_topic_ or increment_topic and store it in a DB (calculator (id, number, operation))
 
 <br/>
-* Create a Module __calculator-result-consumer__ which is a Kafka consumer application
+
+* Create a Module **calculator-result-consumer** which is a Kafka consumer application
 * This consumer listens to __square_topic_ or increment_topic and computes the result and prints it to the console
