@@ -19,6 +19,6 @@ public class WordProducerApplication implements CommandLineRunner {
     @Override
     public void run(String... args) throws Exception {
         String topic = "word-topic";
-        kafkaTemplate.send(topic, "hot");
+        kafkaTemplate.send(topic, "WORD2");
     }
 }

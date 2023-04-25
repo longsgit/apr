@@ -222,8 +222,14 @@ class Account {
 * **HttpClient** (Core Java 11), **RestTemplate**(maintainence mode), **WebClient**(*preferred*) classes can be used to communicate
 * You can configure these classes as @Bean and autowire them instead of creating an instance every time
 
+### Basic concepts about Kafka
 
-
+* A kafka consumer is identified using the **group Id** it belongs.
+* When a consumer application starts, it **polls** for messages every few ms
+* Kafka internally maintains a map of consumer groups and their offsets. **Offset** refers to the last read message's index or position
+* Consumer reads a **batch** of messages from the latest offset and processes them **sequentially**
+* On processing every message an **acknowledgment** is sent to kafka. And kafka updates the offset for that consumer group
+* Kafka delivers each message to a consumer group **EXACTLY ONCE**
 
 
 

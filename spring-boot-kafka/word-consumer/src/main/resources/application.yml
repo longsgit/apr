@@ -6,3 +6,5 @@ spring:
       security.protocol: PLAINTEXT
       sasl.mechanism: PLAIN
       sasl.jaas.config: org.apache.kafka.common.security.plain.PlainLoginModule required username="user" password="bitnami"
+    consumer:
+      auto-offset-reset: earliest
