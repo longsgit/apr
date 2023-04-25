@@ -15,7 +15,7 @@
 ##### Calculator consumers
 
 * Create a Module __calculator-db-consumer__ which is a Kafka consumer application
-* This consumer listens to __square_topic_ or increment_topic and store it in a DB (calculator (id, number, operation))
+* This consumer listens to __square_topic_ or increment_topic and store it in a DB (*calculator-operations (id, number, operation)*)
 
 <br/>
 

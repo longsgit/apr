@@ -230,7 +230,7 @@ class Account {
 * Consumer reads a **batch** of messages from the latest offset and processes them **sequentially**
 * On processing every message an **acknowledgment** is sent to kafka. And kafka updates the offset for that consumer group
 * Kafka delivers each message to a consumer group **EXACTLY ONCE**
-
+* Kafka maintains the order very strictly (But partition plays a role in it)
 
 
 
