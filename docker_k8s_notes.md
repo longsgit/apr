@@ -158,8 +158,17 @@ kubectl run <podName> --image=<imageName> --namespace=<namespaceName>
 kubectl run wednesday-pod --image=wednesday-api:0.0.1 --namespace=training
 ``` 
 
+* To run pod/deployment file throug config file in k8s
 
+```
+kubectl apply -f <config>.yml 
+```
 
+* To delete pod/deployment file throug config file in k8s
+
+```
+kubectl delete -f <config>.yml 
+```
 
 
 
