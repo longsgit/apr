@@ -142,9 +142,21 @@ kubectl delete pod wednesday-pod
 ```
 
 
+* To create a namespace
 
+```
+kubectl create namespace training
+```
 
+* To create a pod and run in a namespace
 
+```
+kubectl run <podName> --image=<imageName> --namespace=<namespaceName>
+```
+
+```
+kubectl run wednesday-pod --image=wednesday-api:0.0.1 --namespace=training
+``` 
 
 
 
