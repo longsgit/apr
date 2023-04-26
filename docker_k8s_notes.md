@@ -125,8 +125,21 @@ kubectl config get-contexts
 kubectl get pods
 ```
 
+* To create a pod and run
 
+```
+kubectl run <podName> --image=<imageName>
+```
 
+```
+kubectl run wednesday-pod --image=wednesday-api:0.0.1
+``` 
+
+* To delete a pod 
+
+```
+kubectl delete pod wednesday-pod
+```
 
 
 
