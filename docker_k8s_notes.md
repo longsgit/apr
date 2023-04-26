@@ -96,6 +96,50 @@ docker-compose -p lab05 up -d
 docker-compose -p lab05 down --rmi all
 ```
 
+### k8s
+
+* Pods are the fundamental building blocks
+* A pod is a wrapper to a container
+* It manages the container; starts/stops/restarts the containers
+* k82 engine manages the pods
+
+#### Steps to create a pod
+
+* Set up **k8s cluster**
+* Create an application
+* Containerize it
+* Create a pod
+* deploy it in the cluster
+
+### Commands in k8s
+
+* To view list of clusters configured in your machine
+
+```
+kubectl config get-contexts
+```
+
+* To view the list of pods
+
+```
+kubectl get pods
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
