@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  namespace: training
+  labels:
+    app: wednesday-api
+  name: wednesday-api
+spec:
+  replicas: 5
+  selector:
+    matchLabels:
+      app: wednesday-api
+  strategy: {}
+  template:
+    metadata:
+      labels:
+        app: wednesday-api
+    spec:
+      containers:
+        - image: wednesday-api:0.0.1
+          name: wednesday-api
+          resources: {}
+
+
+
