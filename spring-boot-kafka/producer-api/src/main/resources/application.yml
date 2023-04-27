@@ -7,5 +7,12 @@ spring:
       security.protocol: PLAINTEXT
       sasl.mechanism: PLAIN
       sasl.jaas.config: org.apache.kafka.common.security.plain.PlainLoginModule required username="user" password="bitnami"
+      spring:
+        json:
+          trusted:
+            packages: '*'
+    producer:
+        key-serializer: org.apache.kafka.common.serialization.StringSerializer
+        value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
 server:
   port: 8081
