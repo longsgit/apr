@@ -1,0 +1,48 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  namespace: training
+  labels:
+    app: word-play-api
+  name: word-play-api
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: word-play-api
+  strategy: {}
+  template:
+    metadata:
+      labels:
+        app: word-play-api
+    spec:
+      containers:
+        - image: word-play-api:1.0.0
+          name: word-play-api
+          env:
+            - name: 'PALINDROME_API_HOST'
+              value: 'host.docker.internal'
+            - name: 'PALINDROME_API_PORT'
+              value: '30001'
+          resources: {}
+---
+apiVersion: v1
+kind: Service
+metadata:
+  namespace: training
+  name: word-play-api
+spec:
+  selector:
+    app: word-play-api
+  type: NodePort
+  ports:
+    - name: http
+      # port: 80 refers to the port where NodePort service is running
+      port: 80
+      #targetPort: 8080 refers to the port that your requests get forwarded to
+      targetPort: 8080
+      #nodePort:30002 is what you use to access this service
+      nodePort: 30002
+      protocol: TCP
+
+
