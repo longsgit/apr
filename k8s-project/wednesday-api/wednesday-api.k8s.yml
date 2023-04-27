@@ -17,27 +17,27 @@ spec:
         app: wednesday-api
     spec:
       containers:
-        - image: wednesday-api:0.0.1
+        - image: prabhudev/training:wednesday-api-0.0.1
           name: wednesday-api
           resources: {}
----
-apiVersion: v1
-kind: Service
-metadata:
-  namespace: training
-  name: wednesday-api
-spec:
-  selector:
-    app: wednesday-api
-  type: NodePort
-  ports:
-    - name: http
-      # port: 80 refers to the port where NodePort service is running
-      port: 80
-      #targetPort: 8080 refers to the port that your requests get forwarded to
-      targetPort: 8080
-      #nodePort:30001 is what you use to access this service
-      nodePort: 30001
-      protocol: TCP
-
+#---
+#apiVersion: v1
+#kind: Service
+#metadata:
+#  namespace: training
+#  name: wednesday-api
+#spec:
+#  selector:
+#    app: wednesday-api
+#  type: NodePort
+#  ports:
+#    - name: http
+#      # port: 80 refers to the port where NodePort service is running
+#      port: 80
+#      #targetPort: 8080 refers to the port that your requests get forwarded to
+#      targetPort: 8080
+#      #nodePort:30001 is what you use to access this service
+#      nodePort: 30001
+#      protocol: TCP
+#
 

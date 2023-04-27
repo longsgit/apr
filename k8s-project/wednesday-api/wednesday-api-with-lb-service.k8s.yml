@@ -1,0 +1,37 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  namespace: training
+  labels:
+    app: wednesday-api
+  name: wednesday-api
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: wednesday-api
+  strategy: {}
+  template:
+    metadata:
+      labels:
+        app: wednesday-api
+    spec:
+      containers:
+        - image: prabhudev/training:wednesday-api-0.0.1
+          name: wednesday-api
+          resources: {}
+---
+apiVersion: v1
+kind: Service
+metadata:
+  namespace: training
+  name: wednesday-api
+spec:
+  selector:
+    app: wednesday-api
+  type: LoadBalancer
+  ports:
+      - port: 80
+        targetPort: 8080
+
+
