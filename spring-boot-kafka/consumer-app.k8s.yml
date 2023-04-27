@@ -20,10 +20,10 @@ spec:
         - image: consumer-app:0.0.1
           name: consumer-app
           env:
-            - name: "KAFKA_HOST"
-              value: "host.docker.internal"
-            - name: "KAFKA_PORT"
-              value: 9093
+            - name: 'KAFKA_HOST'
+              value: 'host.docker.internal'
+            - name: 'KAFKA_PORT'
+              value: '9093'
           resources: {}
 
 
