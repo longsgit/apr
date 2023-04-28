@@ -3,6 +3,7 @@
 * Paging using spring data REST
 * ConfigMaps in k8s
 * openapi/swagger with spring boot 3.0
+* Handle deserialization exception in kafka
 
 
 ### Topics
