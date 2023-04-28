@@ -12,7 +12,7 @@
 }
 ```
 
-* Use Offset Explorer and publish the message to movie-topic
+* Use Offset Explorer and publish the message to movie-topic. Add the header with key **__TypeId__** and value as the name of the class (*eg., com.xyz.model.Movie*)
 
 
 ### MongoDB
