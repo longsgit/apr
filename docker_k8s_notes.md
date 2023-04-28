@@ -170,6 +170,18 @@ kubectl apply -f <config>.yml
 kubectl delete -f <config>.yml 
 ```
 
+#### Services
+
+* You need to configure a service to access the applications running in the pod
+* Different types of services; NodePort, LoadBalancer, Ingress
+* Configure the deployments, services in yaml file and run them 
+* Configure the environment variables for your containers using env or configMap(*to be discussed later*)
+
+<br/>
+
+* Create a AKS cluster
+* Bundle your applications into images and push them to a central repository (*docker hub or Azure Container Registry (ACR)*)
+* When you deploy pods the k8s engin automatically pulls the image from the repository.
 
 
 

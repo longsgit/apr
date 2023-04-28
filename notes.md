@@ -1,3 +1,10 @@
+### ToDo
+
+* Paging using spring data REST
+* ConfigMaps in k8s
+* openapi/swagger with spring boot 3.0
+
+
 ### Topics
 
 * Core Java
@@ -231,7 +238,9 @@ class Account {
 * On processing every message an **acknowledgment** is sent to kafka. And kafka updates the offset for that consumer group
 * Kafka delivers each message to a consumer group **EXACTLY ONCE**
 * Kafka maintains the order very strictly (But partition plays a role in it)
-
+* Serialization/Deserialization of payload. 
+* Configure key-serializer/value-serializer for producing messages
+* Configure key-deserializer/value-deserializer for consuming messages
 
 
 
