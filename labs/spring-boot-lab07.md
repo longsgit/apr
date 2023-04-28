@@ -20,7 +20,7 @@
 * Create a training DB
 * Create two collections **movies** and **movies-errors**
 
-##### Movie details fetcher
+### Movie details fetcher
 
 * Create a spring boot project __spring-boot-lab07-__ which is a Kafka consumer application
 * This consumer listens to __movie_topic___
