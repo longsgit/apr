@@ -16,8 +16,25 @@ public class MovieConsumerConfiguration {
 
     @Bean
     public Consumer<Movie> movieConsumer() {
+
+//        return new MovieConsumerImpl();
+
+//        return new Consumer<Movie>() {
+//            @Override
+//            public void accept(Movie movie) {
+//                movieService.processMovie(movie);
+//            }
+//        };
+
         return (movie) -> {
             movieService.processMovie(movie);
         };
+    }
+}
+
+class MovieConsumerImpl implements Consumer<Movie> {
+    @Override
+    public void accept(Movie movie) {
+        //process movie here
     }
 }
