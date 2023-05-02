@@ -11,7 +11,7 @@
 </dependency>
 ```
 
-### ab08-producer-app
+### lab08-producer-app
 
 * Create a **movie-topic**
 * You will use the following payload to post a movie information
