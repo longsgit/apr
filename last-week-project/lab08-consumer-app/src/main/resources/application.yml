@@ -23,8 +23,11 @@ spring:
         movieConsumer-in-0:
           destination: movie-topic
           group: movie-consumer-local
+          consumer:
+            max-attempts: 5
           configuration:
-            value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
+            value-deserializer: com.herbalife.lab08consumerapp.consumer.MovieCustomErrorHandlingDeserializer
+            spring.deserializer.value.delegate.class: org.springframework.kafka.support.serializer.JsonDeserializer
             auto-offset-reset: earliest
 
   application:

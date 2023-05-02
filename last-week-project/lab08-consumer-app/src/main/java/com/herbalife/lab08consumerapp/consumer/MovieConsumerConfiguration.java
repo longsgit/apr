@@ -26,7 +26,7 @@ public class MovieConsumerConfiguration {
 //            }
 //        };
 
-        return (movie) -> {
+        return (Movie movie) -> {
             movieService.processMovie(movie);
         };
     }

@@ -1,0 +1,18 @@
+spring:
+  application:
+    name: lab08-consumer-kafka-app
+  kafka:
+    bootstrap-servers: localhost:9092
+    properties:
+      security.protocol: PLAINTEXT
+      sasl.mechanism: PLAIN
+      sasl.jaas.config: org.apache.kafka.common.security.plain.PlainLoginModule required username="user" password="bitnami"
+      spring:
+        json:
+          trusted:
+            packages: '*'
+    consumer:
+      auto-offset-reset: latest
+      value-deserializer: com.herbalife.lab08consumerkafkaapp.MovieCustomErrorHandlingDeserializer
+      properties:
+        spring.deserializer.value.delegate.class: org.springframework.kafka.support.serializer.JsonDeserializer
