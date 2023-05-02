@@ -1,0 +1,28 @@
+
+spring:
+  cloud:
+    stream:
+      binders:
+        kafka1:
+          type: kafka
+          environment:
+            spring:
+              cloud:
+                stream:
+                  kafka:
+                    binder:
+                      brokers: localhost:9092
+                      configuration:
+                        security.protocol: PLAINTEXT
+                        sasl.mechanism: PLAIN
+                        sasl.jaas.config: org.apache.kafka.common.security.plain.PlainLoginModule required username="user" password="bitnami";
+      bindings:
+        movie-out-0:
+          destination: movie-topic
+          configuration:
+            value-serializer: org.springframework.kafka.support.serializer.JsonSerializer
+  application:
+    name: lab08-producer-app
+
+server:
+  port: 8081

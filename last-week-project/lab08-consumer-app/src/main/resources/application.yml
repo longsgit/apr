@@ -1,0 +1,31 @@
+
+
+spring:
+  cloud:
+    stream:
+      function:
+        definition: movieConsumer
+      binders:
+        kafka1:
+          type: kafka
+          environment:
+            spring:
+              cloud:
+                stream:
+                  kafka:
+                    binder:
+                      brokers: localhost:9092
+                      configuration:
+                        security.protocol: PLAINTEXT
+                        sasl.mechanism: PLAIN
+                        sasl.jaas.config: org.apache.kafka.common.security.plain.PlainLoginModule required username="user" password="bitnami";
+      bindings:
+        movieConsumer-in-0:
+          destination: movie-topic
+          group: movie-consumer-local
+          configuration:
+            value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
+            auto-offset-reset: earliest
+
+  application:
+    name: lab08-consumer-app
