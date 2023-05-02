@@ -1,0 +1,35 @@
+spring:
+  cloud:
+    stream:
+      function:
+        definition: consumerWeatherInformation
+      binders:
+        kafka1:
+          type: kafka
+          environment:
+            spring:
+              cloud:
+                stream:
+                  kafka:
+                    binder:
+                      brokers: localhost:9092
+                      configuration:
+                        security.protocol: PLAINTEXT
+                        sasl.mechanism: PLAIN
+                        sasl.jaas.config: org.apache.kafka.common.security.plain.PlainLoginModule required username="user" password="bitnami";
+      bindings:
+        consumerWeatherInformation-in-0:
+          destination: weather-topic
+          group: weather-topic-consumer-cs-local
+          consumer:
+            max-attempts: 2
+            auto-offset-reset: earliest
+            back-off-max-interval: 1000
+            back-off-multiplier: 2.0
+            enableDlq: true
+            dlqName: weather-topic-dlt
+            configuration:
+              value.deserializer: org.apache.kafka.common.serialization.StringDeserializer
+
+
+
