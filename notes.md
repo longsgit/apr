@@ -1,9 +1,10 @@
 ### ToDo
 
+* Transactions
 * Paging using spring data REST
 * ConfigMaps in k8s
 * openapi/swagger with spring boot 3.0 (*Done*)
-* Handle deserialization exception in kafka (*Done*)
+* Handle deserialization exception in kafka (*Need to get it working*)
 * Process a stream of messages in kafka
 
 
@@ -243,8 +244,33 @@ class Account {
 * Serialization/Deserialization of payload. 
 * Configure key-serializer/value-serializer for producing messages
 * Configure key-deserializer/value-deserializer for consuming messages
+* Handle deserialization errors, configure **ErrorHandlingDeserializer** which delegates to the actual Deserializer
+
+### Kafka Cloud streams
+
+* Cloud streams library to talk to any MoM
+* Code is MoM agnostic
+* Spring cloud stream/ cloud stream binder for kafka/rabbitmq/solace
+* **StreamBridge** to publish messages; Similar to **KafkaTemplate**
+* FI  **Consumer<T>** to consume messages; similar t**o @KafkaListener**
+* In the yml file, configure various bindings; bindings follow a pattern *-in-* or *-out-*
+* Refer to the binding name in the code
+* Handle deserialization errors, configure **ErrorHandlingDeserializer** which delegates to the actual Deserializer
 
 
+### Maven project structure
+
+* Define a parent project
+* Have all the basic dependencies, java version configured
+* Package it as **pom**
+* Run **install**
+* Refer to the parent in every other project by using the **<parent></parent>** configuration
+	
+
+### Unit testing
+
+* JUnit 5 (**Jupiter**)
+* Mockito
 
 
 
