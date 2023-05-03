@@ -6,6 +6,10 @@ import jakarta.enterprise.context.ApplicationScoped;
 
 import java.util.List;
 
+//Very different from JpaRepository
+//JpaRepository is an interface with a lot of conventional methods
+//JPQL syntax is different from Panache
+
 @ApplicationScoped
 public class PersonRepository implements PanacheRepository<Person> {
     public List<Person> findAllByFirstName(String firstName) {

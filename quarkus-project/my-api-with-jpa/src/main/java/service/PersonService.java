@@ -20,6 +20,24 @@ public class PersonService {
         return person;
     }
 
+    @Transactional
+    public Person updateAge(int id, int newAge) {
+        Person person = personRepository.findById((long) id);
+        if (person != null) {
+            person.setAge(newAge);
+            personRepository.persist(person);
+        } else {
+            throw new RuntimeException("Person with id %s not found".formatted(id));
+        }
+        return person;
+    }
+
+
+    @Transactional
+    public void deletePerson(int id) {
+        personRepository.deleteById((long) id);
+    }
+
     public List<Person> getAllPersons() {
         return personRepository.listAll();
     }
