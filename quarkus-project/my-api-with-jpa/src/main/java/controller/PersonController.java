@@ -1,5 +1,6 @@
 package controller;
 
+import dto.PersonDto;
 import entity.Person;
 import jakarta.inject.Inject;
 import jakarta.ws.rs.GET;
@@ -18,8 +19,10 @@ public class PersonController {
     public List<Person> getAll() {
         return personService.getAllPersons();
     }
+
     @POST
-    public Person createPerson(Person person) {
-        return createPerson(person);
+//    public Person createPerson(@Valid @RequestBody PersonDto personDto) { }
+    public Person createPerson(PersonDto personDto) {
+        return personService.createPerson(personDto.firstName(), personDto.lastName(), personDto.age());
     }
 }

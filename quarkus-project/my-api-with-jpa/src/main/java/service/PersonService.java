@@ -24,4 +24,13 @@ public class PersonService {
         return personRepository.listAll();
     }
 
+    @Transactional
+    public Person createPerson(String firstName, String lastName, int age) {
+        Person person = new Person();
+        person.setFirstName(firstName);
+        person.setLastName(lastName);
+        person.setAge(age);
+        personRepository.persist(person);
+        return person;
+    }
 }
