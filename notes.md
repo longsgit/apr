@@ -273,7 +273,25 @@ class Account {
 * JUnit 5 (**Jupiter**)
 * Mockito
 
+### @Transactional
 
+* When you mark a method or class @Transactional
+* a new proxy class is generated which extends your target class
+
+``` java
+class PersonService$$SpringCGLIB$$0 extends PersonService {
+	private PersonService target;
+	
+	public void saveFamily(...) {
+		//Starts a transaction
+		target.saveFamily(...);
+		//On success  commit tx
+		//On error rollback tx
+	}
+}
+
+
+```
 
 
 
