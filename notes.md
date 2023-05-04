@@ -293,6 +293,13 @@ class PersonService$$SpringCGLIB$$0 extends PersonService {
 
 ```
 
+### Microservices 
+
+* Coined by Martin Fowler/James Lewis
+* It's a pattern and not a standard
+* 'Micro' is just a label and not a description; does not describe the size or granularity of an application
+* Any independently running application that can be accessed by simple HTTP and JSON is a micro service
+* **Rationale:** GTM strategy; Resilience; Scalability; Agile;
 
 
 
