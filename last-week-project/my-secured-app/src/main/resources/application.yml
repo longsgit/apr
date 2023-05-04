@@ -1,0 +1,14 @@
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/training
+    username: root
+    password: root
+    driver-class-name: com.mysql.cj.jdbc.Driver
+#spring:
+#  security:
+#    user:
+#      name: sam
+#      password: sam123
+server:
+  port: 8081
+
