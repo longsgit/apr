@@ -1,6 +1,6 @@
 ### ToDo
 
-* Transactions
+* Transactions (*Done*)
 * Paging using spring data REST
 * ConfigMaps in k8s
 * openapi/swagger with spring boot 3.0 (*Done*)

@@ -57,7 +57,7 @@ public class JwtAuthorizationFilter extends BasicAuthenticationFilter {
         if (token != null) {
             JWTVerifier v = JWT.require(Algorithm.HMAC512("DEMO".getBytes())).build();
             DecodedJWT d = v.verify(token.replace(TOKEN_PREFIX, ""));
-            System.out.println(d);
+
 
             String user = JWT.require(Algorithm.HMAC512("DEMO".getBytes()))
                     .build()

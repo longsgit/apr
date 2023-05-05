@@ -14,4 +14,11 @@ public class WeatherConsumer {
             System.out.println("*****RECEIVED " + city);
         };
     }
+
+    @Bean
+    public Consumer<Long> squaredNumberConsumer() {
+        return num -> {
+            System.out.println(num * num);
+        };
+    }
 }

@@ -2,7 +2,7 @@ spring:
   cloud:
     stream:
       function:
-        definition: consumerWeatherInformation
+        definition: squaredNumberConsumer
       binders:
         kafka1:
           type: kafka
@@ -14,22 +14,28 @@ spring:
                     binder:
                       brokers: localhost:9092
                       configuration:
+                        use-native-encoding: true
+                        value.deserializer: org.apache.kafka.common.serialization.LongDeserializer
                         security.protocol: PLAINTEXT
                         sasl.mechanism: PLAIN
                         sasl.jaas.config: org.apache.kafka.common.security.plain.PlainLoginModule required username="user" password="bitnami";
       bindings:
-        consumerWeatherInformation-in-0:
-          destination: weather-topic
-          group: weather-topic-consumer-cs-local
-          consumer:
-            max-attempts: 2
-            auto-offset-reset: earliest
-            back-off-max-interval: 1000
-            back-off-multiplier: 2.0
-            enableDlq: true
-            dlqName: weather-topic-dlt
-            configuration:
-              value.deserializer: org.apache.kafka.common.serialization.StringDeserializer
+        squaredNumberConsumer-in-0:
+          destination: number-topic
+          group: number-topic-consumer-cs-local2
+#        consumerWeatherInformation-in-0:
+#          destination: weather-topic
+#          group: weather-topic-consumer-cs-local
+
+#          consumer:
+#            max-attempts: 2
+#            auto-offset-reset: earliest
+#            back-off-max-interval: 1000
+#            back-off-multiplier: 2.0
+#            enableDlq: true
+#            dlqName: weather-topic-dlt
+#            configuration:
+#              value.deserializer: org.apache.kafka.common.serialization.StringDeserializer
 
 
 
