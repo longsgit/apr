@@ -3,6 +3,7 @@ package com.herbalife.examples;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
+import java.util.function.Function;
 import java.util.stream.Collectors;
 
 public class MoreMethodsOnStreams {
@@ -41,5 +42,9 @@ public class MoreMethodsOnStreams {
                 .stream()
                 .collect(Collectors.groupingBy(e -> e, Collectors.counting()));
         System.out.println(countMap); //{a=2, b=2, c=3}
+        Map<String, Long> countMap1 = lst
+                .stream()
+                .collect(Collectors.groupingBy(Function.identity(), Collectors.counting()));
+        System.out.println(countMap1);
     }
 }

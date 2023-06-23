@@ -21,7 +21,7 @@ public class SpringBootLab01Application implements CommandLineRunner {
     @Override
     public void run(String... args) throws Exception {
         newAgeConference.get90MinTopics().forEach(System.out::println);
-        newAgeConference.get60MinTopics().forEach(System.out::println);
-        newAgeConference.get45MinTopics().forEach(System.out::println);
+//        newAgeConference.get60MinTopics().forEach(System.out::println);
+//        newAgeConference.get45MinTopics().forEach(System.out::println);
     }
 }

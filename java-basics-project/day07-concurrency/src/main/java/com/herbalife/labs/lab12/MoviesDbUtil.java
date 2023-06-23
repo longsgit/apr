@@ -24,7 +24,7 @@ public class MoviesDbUtil {
         try {
             connection = DriverManager.getConnection(JDBC_MYSQL_LOCALHOST_3306_TRAINING, USERNAME, PASSWORD);
             String query = """
-                    insert into movies(title, year, genre, language) values('%s',%d,'%s','%s')
+                    insert into movie(title, year, genre, language) values('%s',%d,'%s','%s')
                     """;
             Statement statement = connection.createStatement();
             statement.execute(query.formatted(title, year, genre, language));
